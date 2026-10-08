@@ -4,19 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Cita Cita para Jacqueline ❤️</title>
+  <title>Para Jacqueline ♡</title>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@400;500;600;700&display=swap');
+
     :root {
-      --cream: #fffaf3;
-      --paper: #fffdf9;
-      --ink: #332b2b;
-      --muted: #756565;
-      --wine: #8f3048;
-      --rose: #d97488;
-      --pink: #f8dce2;
-      --gold: #d69b48;
-      --shadow: 0 18px 45px rgba(91, 43, 53, 0.14);
+      --cream: #fffaf7;
+      --paper: #fffefd;
+      --ink: #34292b;
+      --soft-ink: #735f62;
+      --wine: #8e4053;
+      --deep-wine: #642d3c;
+      --rose: #e99cae;
+      --blush: #f9e0e3;
+      --peach: #fce9d8;
+      --line: rgba(142, 64, 83, 0.14);
+      --shadow: 0 20px 60px rgba(94, 44, 57, 0.12);
     }
 
     * {
@@ -30,541 +34,870 @@
     body {
       margin: 0;
       color: var(--ink);
-      background:
-        radial-gradient(circle at 10% 10%, rgba(248, 220, 226, 0.75), transparent 25rem),
-        radial-gradient(circle at 90% 20%, rgba(255, 232, 190, 0.5), transparent 22rem),
-        var(--cream);
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.7;
-    }
-
-    .container {
-      width: min(940px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 42px 0;
-    }
-
-    .hero-card {
-      position: relative;
-      width: 100%;
-      padding: clamp(34px, 8vw, 86px) clamp(24px, 8vw, 90px);
-      text-align: center;
-      background: rgba(255, 253, 249, 0.9);
-      border: 1px solid rgba(143, 48, 72, 0.13);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .hero-card::before,
-    .hero-card::after {
-      position: absolute;
-      color: var(--rose);
-      font-size: 28px;
-      opacity: 0.65;
-    }
-
-    .hero-card::before {
-      content: "✦";
-      top: 22px;
-      left: 28px;
-    }
-
-    .hero-card::after {
-      content: "✦";
-      right: 28px;
-      bottom: 22px;
-    }
-
-    .eyebrow {
-      margin: 0 0 12px;
-      color: var(--wine);
-      font-size: 0.85rem;
-      font-weight: bold;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
+      background: var(--cream);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
     }
 
     h1,
     h2,
-    h3 {
-      line-height: 1.15;
-    }
-
-    h1 {
+    h3,
+    p {
       margin: 0;
-      color: var(--wine);
-      font-size: clamp(3rem, 10vw, 6.7rem);
-      letter-spacing: -0.06em;
     }
 
-    .hero-subtitle {
-      max-width: 540px;
-      margin: 20px auto 30px;
-      color: var(--muted);
-      font-size: clamp(1.05rem, 2.7vw, 1.35rem);
-      font-style: italic;
+    button {
+      font: inherit;
     }
 
-    .heart {
-      display: inline-block;
-      color: var(--rose);
-      animation: pulse 1.7s infinite;
+    .page {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
     }
 
-    .details {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin: 34px auto 0;
-      max-width: 700px;
+    .page::before {
+      content: "";
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      top: -170px;
+      right: -120px;
+      background: var(--blush);
+      border-radius: 50%;
+      opacity: 0.55;
+      filter: blur(3px);
+      pointer-events: none;
     }
 
-    .detail {
-      padding: 16px 12px;
-      background: var(--pink);
-      border-radius: 16px;
+    .page::after {
+      content: "";
+      position: fixed;
+      width: 330px;
+      height: 330px;
+      bottom: -150px;
+      left: -120px;
+      background: var(--peach);
+      border-radius: 50%;
+      opacity: 0.55;
+      pointer-events: none;
     }
 
-    .detail-label {
-      display: block;
-      margin-bottom: 3px;
-      color: var(--wine);
-      font-family: Arial, sans-serif;
-      font-size: 0.7rem;
-      font-weight: bold;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+    .container {
+      width: min(900px, calc(100% - 36px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
 
-    .detail-value {
-      font-size: 0.98rem;
-    }
-
-    .scroll-note {
-      display: block;
-      margin-top: 35px;
-      color: var(--wine);
-      font-family: Arial, sans-serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    main {
-      padding-bottom: 70px;
-    }
+    /* Intro */
 
     .intro {
-      max-width: 700px;
-      margin: 0 auto 40px;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 30px 0;
+    }
+
+    .intro-inner {
+      width: 100%;
+      max-width: 760px;
       text-align: center;
-      color: var(--muted);
-      font-size: 1.1rem;
+    }
+
+    .tiny-label {
+      color: var(--wine);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .envelope {
+      width: 74px;
+      height: 74px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 28px;
+      color: white;
+      background: var(--wine);
+      border-radius: 24px;
+      font-size: 2rem;
+      transform: rotate(-7deg);
+      box-shadow: 0 15px 30px rgba(142, 64, 83, 0.22);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .intro h1 {
+      max-width: 720px;
+      margin: 18px auto 22px;
+      color: var(--deep-wine);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3.3rem, 10vw, 7.2rem);
+      font-weight: 500;
+      letter-spacing: -0.07em;
+      line-height: 0.95;
+    }
+
+    .intro h1 em {
+      color: var(--wine);
+      font-weight: 400;
+    }
+
+    .intro-copy {
+      max-width: 460px;
+      margin: 0 auto;
+      color: var(--soft-ink);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.15rem, 3vw, 1.45rem);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .primary-button {
+      border: 0;
+      margin-top: 34px;
+      padding: 16px 23px;
+      color: white;
+      background: var(--wine);
+      border-radius: 100px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      box-shadow: 0 12px 25px rgba(142, 64, 83, 0.2);
+      transition: 0.25s ease;
+    }
+
+    .primary-button:hover {
+      background: var(--deep-wine);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 30px rgba(142, 64, 83, 0.28);
+    }
+
+    .primary-button:active {
+      transform: translateY(0);
+    }
+
+    .hint {
+      margin-top: 20px;
+      color: #a99598;
+      font-size: 0.75rem;
+    }
+
+    /* Main story */
+
+    .story {
+      display: none;
+      padding: 30px 0 70px;
+    }
+
+    .story.visible {
+      display: block;
+      animation: appear 0.8s ease both;
+    }
+
+    .story-header {
+      padding: 40px 0 54px;
+      text-align: center;
+    }
+
+    .story-header h2 {
+      max-width: 700px;
+      margin: 15px auto 0;
+      color: var(--deep-wine);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      font-weight: 500;
+      letter-spacing: -0.06em;
+      line-height: 1;
+    }
+
+    .story-header h2 em {
+      color: var(--wine);
+      font-weight: 400;
+    }
+
+    .story-header p {
+      max-width: 480px;
+      margin: 22px auto 0;
+      color: var(--soft-ink);
+      font-size: 1rem;
+      line-height: 1.7;
     }
 
     .section {
       margin: 26px 0;
-      padding: clamp(24px, 5vw, 46px);
-      background: rgba(255, 253, 249, 0.9);
-      border: 1px solid rgba(143, 48, 72, 0.11);
-      border-radius: 24px;
-      box-shadow: 0 10px 30px rgba(91, 43, 53, 0.06);
+      padding: clamp(27px, 5vw, 52px);
+      background: rgba(255, 254, 253, 0.88);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: 0 12px 45px rgba(94, 44, 57, 0.06);
     }
 
-    .section-heading {
-      display: flex;
+    .section-tag {
+      display: inline-flex;
       align-items: center;
-      gap: 15px;
-      margin-bottom: 25px;
+      gap: 8px;
+      color: var(--wine);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
-    .section-number {
+    .section-tag::before {
+      content: "";
+      width: 22px;
+      height: 1px;
+      background: var(--rose);
+    }
+
+    .section h3 {
+      max-width: 650px;
+      margin: 17px 0 15px;
+      color: var(--deep-wine);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 500;
+      letter-spacing: -0.05em;
+      line-height: 1.04;
+    }
+
+    .section h3 em {
+      color: var(--wine);
+      font-weight: 400;
+    }
+
+    .section-text {
+      max-width: 650px;
+      color: var(--soft-ink);
+      font-size: 1.03rem;
+      line-height: 1.8;
+    }
+
+    .section-text + .section-text {
+      margin-top: 14px;
+    }
+
+    /* Friday card */
+
+    .night-card {
       display: grid;
-      flex: 0 0 48px;
-      width: 48px;
-      height: 48px;
-      place-items: center;
-      color: white;
-      background: var(--wine);
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 25px;
+      margin-top: 28px;
+      padding: 24px;
+      background: linear-gradient(135deg, #f7e2e4, #fff1e4);
+      border-radius: 21px;
+    }
+
+    .night-card h4 {
+      margin-bottom: 6px;
+      color: var(--deep-wine);
+      font-family: "Playfair Display", serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+
+    .night-card p {
+      color: var(--soft-ink);
+      font-size: 0.93rem;
+      line-height: 1.6;
+    }
+
+    .night-icon {
+      font-size: 3.5rem;
+      filter: drop-shadow(0 5px 8px rgba(142, 64, 83, 0.15));
+    }
+
+    /* Timeline */
+
+    .timeline {
+      position: relative;
+      margin-top: 30px;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      bottom: 7px;
+      left: 6px;
+      width: 1px;
+      background: var(--rose);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 28px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      top: 6px;
+      left: -30px;
+      background: var(--cream);
+      border: 3px solid var(--wine);
       border-radius: 50%;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
     }
 
-    h2 {
-      margin: 0;
+    .timeline-label {
+      margin-bottom: 5px;
       color: var(--wine);
-      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
-    h3 {
-      margin: 27px 0 8px;
-      color: var(--wine);
-      font-size: 1.35rem;
+    .timeline-item h4 {
+      margin-bottom: 5px;
+      color: var(--deep-wine);
+      font-family: "Playfair Display", serif;
+      font-size: 1.55rem;
+      font-weight: 500;
     }
 
-    p {
-      margin: 10px 0;
+    .timeline-item p {
+      color: var(--soft-ink);
+      font-size: 0.96rem;
+      line-height: 1.65;
     }
 
-    .highlight {
-      margin: 22px 0;
-      padding: 20px 22px;
-      background: #fff3f5;
-      border-left: 4px solid var(--rose);
-      border-radius: 0 14px 14px 0;
+    /* Accordion */
+
+    .reveal-intro {
+      margin: 18px 0 20px;
+      color: var(--soft-ink);
+      line-height: 1.7;
     }
 
-    .highlight p {
-      margin: 0;
-    }
-
-    .activity-list {
-      display: grid;
-      gap: 12px;
-      padding: 0;
-      list-style: none;
-    }
-
-    .activity-list li {
-      padding: 14px 16px;
-      background: #fff8ef;
-      border-radius: 12px;
-    }
-
-    .activity-list strong {
-      color: var(--wine);
-    }
-
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .photo-item {
-      padding: 17px;
-      text-align: center;
-      background: #fdf0e4;
-      border-radius: 14px;
-    }
-
-    .rules {
+    .accordion {
       display: grid;
       gap: 10px;
-      padding: 0;
-      list-style: none;
-      counter-reset: rules;
+      margin-top: 20px;
     }
 
-    .rules li {
-      counter-increment: rules;
+    .accordion-item {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: #fffaf7;
+    }
+
+    .accordion-button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 17px 18px;
+      border: 0;
+      color: var(--deep-wine);
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+      font-family: "Playfair Display", serif;
+      font-size: 1.2rem;
+    }
+
+    .accordion-button span:last-child {
+      color: var(--rose);
+      font-family: "DM Sans", sans-serif;
+      font-size: 1.3rem;
+      transition: transform 0.25s ease;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 0 18px 19px;
+      color: var(--soft-ink);
+      font-size: 0.94rem;
+      line-height: 1.7;
+    }
+
+    .accordion-item.open .accordion-content {
+      display: block;
+      animation: appear 0.3s ease;
+    }
+
+    .accordion-item.open .accordion-button span:last-child {
+      transform: rotate(45deg);
+    }
+
+    /* Rule card */
+
+    .rule-card {
       position: relative;
-      padding: 13px 16px 13px 52px;
-      background: #fff8ef;
-      border-radius: 12px;
-    }
-
-    .rules li::before {
-      content: counter(rules, decimal-leading-zero);
-      position: absolute;
-      top: 50%;
-      left: 15px;
-      transform: translateY(-50%);
-      color: var(--wine);
-      font-family: Arial, sans-serif;
-      font-size: 0.8rem;
-      font-weight: bold;
-    }
-
-    .final-card {
-      margin-top: 30px;
-      padding: clamp(34px, 7vw, 65px) 25px;
+      overflow: hidden;
+      padding: clamp(28px, 5vw, 48px);
       color: white;
-      background:
-        linear-gradient(135deg, rgba(143, 48, 72, 0.96), rgba(190, 77, 104, 0.94)),
-        var(--wine);
-      border-radius: 25px;
-      text-align: center;
+      background: var(--deep-wine);
+      border-radius: 30px;
       box-shadow: var(--shadow);
     }
 
-    .final-card h2 {
-      color: white;
-      font-size: clamp(2rem, 6vw, 3.7rem);
+    .rule-card::after {
+      content: "♡";
+      position: absolute;
+      right: 26px;
+      bottom: -18px;
+      color: rgba(255, 255, 255, 0.09);
+      font-family: "Playfair Display", serif;
+      font-size: 10rem;
+      line-height: 1;
     }
 
-    .final-card p {
-      max-width: 600px;
-      margin: 20px auto 0;
-      font-size: 1.12rem;
+    .rule-card .section-tag {
+      color: var(--rose);
+    }
+
+    .rule-card h3 {
+      position: relative;
+      z-index: 1;
+      color: white;
+      margin-bottom: 24px;
+    }
+
+    .rule-list {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 13px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .rule-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: #f9e9e9;
+      font-size: 0.96rem;
+      line-height: 1.55;
+    }
+
+    .rule-list li::before {
+      content: "♡";
+      flex: 0 0 auto;
+      color: var(--rose);
+      font-size: 1.1rem;
+    }
+
+    /* Ending */
+
+    .ending {
+      padding: 80px 0 35px;
+      text-align: center;
+    }
+
+    .ending h3 {
+      max-width: 700px;
+      margin: 15px auto 20px;
+      color: var(--deep-wine);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.8rem, 8vw, 6rem);
+      font-weight: 500;
+      letter-spacing: -0.07em;
+      line-height: 0.96;
+    }
+
+    .ending h3 em {
+      color: var(--wine);
+      font-weight: 400;
+    }
+
+    .ending p {
+      max-width: 500px;
+      margin: 0 auto;
+      color: var(--soft-ink);
+      line-height: 1.75;
+    }
+
+    .answer {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 17px 25px;
+      color: white;
+      background: var(--wine);
+      border-radius: 100px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.25s ease;
+    }
+
+    .answer:hover {
+      background: var(--deep-wine);
+      transform: translateY(-3px);
     }
 
     .signature {
-      margin-top: 32px;
-      font-size: 1.35rem;
+      margin-top: 34px !important;
+      color: var(--wine) !important;
+      font-family: "Playfair Display", serif;
+      font-size: 1.25rem;
       font-style: italic;
     }
 
-    footer {
-      padding: 0 20px 35px;
-      color: var(--muted);
+    .footer {
+      padding: 15px 0 30px;
+      color: #ae9b9e;
       text-align: center;
-      font-size: 0.85rem;
+      font-size: 0.75rem;
     }
 
-    @keyframes pulse {
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
       0%, 100% {
-        transform: scale(1);
+        transform: translateY(0) rotate(-7deg);
       }
 
       50% {
-        transform: scale(1.18);
+        transform: translateY(-8px) rotate(-3deg);
       }
     }
 
-    @media (max-width: 650px) {
-      .details {
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 26px, 900px);
+      }
+
+      .intro h1 {
+        font-size: clamp(3.4rem, 17vw, 6rem);
+      }
+
+      .intro-copy {
+        font-size: 1.12rem;
+      }
+
+      .section {
+        border-radius: 23px;
+      }
+
+      .night-card {
         grid-template-columns: 1fr;
       }
 
-      .photo-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 18px 0 35px;
-      }
-
-      .hero-card {
-        border-radius: 22px;
+      .night-icon {
+        display: none;
       }
     }
   </style>
 </head>
 
 <body>
-  <header class="hero">
-    <div class="container">
-      <div class="hero-card">
-        <p class="eyebrow">Una invitación oficialmente no oficial</p>
+  <div class="page">
+    <section class="intro">
+      <div class="container">
+        <div class="intro-inner">
+          <div class="envelope">♡</div>
 
-        <h1>✦ Cita Cita ✦</h1>
+          <p class="tiny-label">Jacqueline, esto es para ti</p>
 
-        <p class="hero-subtitle">
-          Una cita. Pero cita cita.
-          <span class="heart">♥</span>
-        </p>
+          <h1>
+            Tengo una<br />
+            <em>propuesta.</em>
+          </h1>
 
-        <div class="details">
-          <div class="detail">
-            <span class="detail-label">Para</span>
-            <span class="detail-value">Jacqueline</span>
-          </div>
+          <p class="intro-copy">
+            No requiere corbata, puntualidad extrema ni saber bailar.
+            Solo ganas de pasar un día bonito conmigo.
+          </p>
 
-          <div class="detail">
-            <span class="detail-label">Cuándo</span>
-            <span class="detail-value">Viernes en la noche / sábado en la mañana</span>
-          </div>
+          <button class="primary-button" id="openInvitation">
+            Abrir invitación
+          </button>
 
-          <div class="detail">
-            <span class="detail-label">Dónde</span>
-            <span class="detail-value">Partimos en mi depa</span>
-          </div>
+          <p class="hint">prometo que vale la pena seguir leyendo ↓</p>
         </div>
-
-        <a class="scroll-note" href="#invitacion">
-          El resto se descubre caminando ↓
-        </a>
       </div>
-    </div>
-  </header>
-
-  <main id="invitacion" class="container">
-    <p class="intro">
-      La idea es pasar tiempo juntos, descansar, caminar, comer rico,
-      reírnos y dejar que el día se vaya armando solo.
-    </p>
-
-    <section class="section">
-      <div class="section-heading">
-        <div class="section-number">01</div>
-        <h2>Si llegas de madrugada 🌙</h2>
-      </div>
-
-      <p>
-        Después de competir, no hay que demostrarle nada a nadie.
-        Llegas a la hora que quieras, te instalas y yo me encargo del resto.
-      </p>
-
-      <div class="highlight">
-        <p>
-          Masajito de manitas + espalda<br />
-          Besitos.<br />
-          Cariño en la cabeza.<br />
-          Abrazo.<br />
-          Y dormir.
-        </p>
-      </div>
-
-      <p>
-        Sin horarios. Sin apuro. Sin planes que cumplir.
-        Solo tú descansando y yo haciendo lo posible para que te sientas querida.
-      </p>
     </section>
 
-    <section class="section">
-      <div class="section-heading">
-        <div class="section-number">02</div>
-        <h2>Si llegas en la mañana ☀️</h2>
+    <main class="story" id="story">
+      <div class="container">
+        <header class="story-header">
+          <p class="tiny-label">Invitación para una persona especial</p>
+
+          <h2>
+            Jacqueline,<br />
+            ¿te gustaría tener una <em>cita cita</em> conmigo?
+          </h2>
+
+          <p>
+            De esas que empiezan tranquilas, se convierten en paseo,
+            terminan con comida rica y dejan fotos que después miramos
+            sonriendo.
+          </p>
+        </header>
+
+        <section class="section">
+          <span class="section-tag">La idea</span>
+
+          <h3>
+            Una noche para descansar.<br />
+            Un día para <em>vivirlo juntos.</em>
+          </h3>
+
+          <p class="section-text">
+            Puedes llegar el viernes en la noche o el sábado en la mañana.
+            No hay una forma correcta de hacerlo: la cita comienza cuando
+            llegues tú.
+          </p>
+
+          <div class="night-card">
+            <div>
+              <h4>Si llegas de madrugada</h4>
+              <p>
+                Te instalas, descansas y recibes el paquete completo:
+                masajito, besitos, cariño en la cabeza, abrazo y dormir.
+              </p>
+            </div>
+
+            <div class="night-icon">🌙</div>
+          </div>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">El sábado</span>
+
+          <h3>
+            Desayuno, caminata<br />
+            y una pequeña <em>expedición.</em>
+          </h3>
+
+          <p class="section-text">
+            Si llegas por la mañana, partimos con desayuno para dos
+            y después salimos rumbo a Quinta Normal.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <p class="timeline-label">Primera parada</p>
+              <h4>Desayuno para dos ☕️</h4>
+              <p>
+                El combustible oficial de cualquier aventura romántica.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <p class="timeline-label">Después</p>
+              <h4>Rumbo a Quinta Normal 🚶‍♀️🚶‍♂️</h4>
+              <p>
+                Caminamos sin apuro, conversamos y miramos el mundo
+                como si no tuviéramos que llegar rápido a ninguna parte.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <p class="timeline-label">La misión</p>
+              <h4>Museos y evidencia 📸</h4>
+              <p>
+                Visitamos los museos que alcancemos y tomamos fotos
+                suficientes para demostrar que efectivamente estuvimos ahí.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <p class="timeline-label">El extra</p>
+              <h4>Museo Ferroviario 🚂</h4>
+              <p>
+                Solo si todavía tenemos energía, curiosidad y piernas.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">La parte importante</span>
+
+          <h3>
+            No queremos cumplir un itinerario.<br />
+            Queremos <em>pasarlo bien.</em>
+          </h3>
+
+          <p class="reveal-intro">
+            Estas son algunas cosas que podrían pasar. Puedes abrirlas
+            cuando quieras:
+          </p>
+
+          <div class="accordion">
+            <div class="accordion-item">
+              <button class="accordion-button">
+                <span>Caminar sin mirar la hora</span>
+                <span>+</span>
+              </button>
+              <div class="accordion-content">
+                Porque a veces el mejor plan es seguir caminando hasta que
+                aparezca una conversación interesante, una banca cómoda
+                o simplemente hambre.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-button">
+                <span>Reírnos por cualquier tontera</span>
+                <span>+</span>
+              </button>
+              <div class="accordion-content">
+                Actividad completamente gratuita y altamente probable.
+                No necesita reserva previa.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-button">
+                <span>Sentarnos en el parque</span>
+                <span>+</span>
+              </button>
+              <div class="accordion-content">
+                Sin productividad, sin objetivos y sin culpa.
+                Solo estar juntos un rato.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-button">
+                <span>Tomarnos muchas fotos</span>
+                <span>+</span>
+              </button>
+              <div class="accordion-content">
+                Fotos tuyas, fotos mías, fotos juntos y alguna evidencia
+                de que la expedición sí ocurrió.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <span class="section-tag">El regreso</span>
+
+          <h3>
+            Pasta casera, vino<br />
+            y probablemente <em>harina por todas partes.</em>
+          </h3>
+
+          <p class="section-text">
+            Volvemos al depa y cocinamos pasta. Las salsas estarán listas,
+            porque alguien en esta relación tiene que pensar con anticipación.
+          </p>
+
+          <p class="section-text">
+            Y si todavía tenemos energía, hacemos nuestra propia pasta desde cero.
+            Puede quedar increíble. Puede quedar horrible. En ambos casos,
+            nos vamos a reír igual.
+          </p>
+
+          <div class="night-card">
+            <div>
+              <h4>La combinación oficial</h4>
+              <p>
+                Pasta casera + un vinito + nosotros dos intentando
+                hacer las cosas bien.
+              </p>
+            </div>
+
+            <div class="night-icon">🍝</div>
+          </div>
+        </section>
+
+        <section class="rule-card">
+          <span class="section-tag">Reglamento de la cita</span>
+
+          <h3>
+            Reglas simples<br />
+            para un día bonito.
+          </h3>
+
+          <ul class="rule-list">
+            <li>No hay apuro.</li>
+            <li>No tenemos que cumplir todo el plan.</li>
+            <li>Podemos cambiar de opinión en cualquier momento.</li>
+            <li>Los abrazos están permitidos durante todo el recorrido.</li>
+            <li>Si estás cansada, se cancela cualquier cosa excepto descansar.</li>
+            <li>El objetivo principal es pasarlo bien juntos.</li>
+          </ul>
+        </section>
+
+        <section class="ending">
+          <p class="tiny-label">La pregunta importante</p>
+
+          <h3>
+            ¿Aceptas esta<br />
+            <em>cita cita?</em> ♡
+          </h3>
+
+          <p>
+            Prometo una tarde linda, una noche tranquila,
+            comida rica y al menos una situación que después
+            recordemos con una sonrisa.
+          </p>
+
+          <a
+            class="answer"
+            href="https://wa.me/?text=Jacqueline%2C%20acepto%20la%20cita%20cita%20%F0%9F%99%88%20%E2%9D%A4%EF%B8%8F"
+            target="_blank"
+            rel="noopener"
+          >
+            Mi respuesta es sí ♡
+          </a>
+
+          <p class="signature">
+            Con cariño,<br />
+            alguien que quiere verte.
+          </p>
+        </section>
+
+        <footer class="footer">
+          Hecha especialmente para Jacqueline · Cita Cita 2026
+        </footer>
       </div>
+    </main>
+  </div>
 
-      <h3>Desayuno para dos ☕️</h3>
+  <script>
+    const openButton = document.getElementById("openInvitation");
+    const story = document.getElementById("story");
 
-      <p>
-        La Cita Cita comienza oficialmente con desayuno,
-        conversación y probablemente alguna opinión muy seria sobre qué comer.
-      </p>
+    openButton.addEventListener("click", () => {
+      story.classList.add("visible");
 
-      <h3>Rumbo a Quinta Normal 🚶‍♀️🚶‍♂️</h3>
+      setTimeout(() => {
+        story.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 100);
+    });
 
-      <p>
-        Un paseo sin correr, sin mirar demasiado la hora y con la cámara preparada.
-      </p>
+    const accordionButtons = document.querySelectorAll(".accordion-button");
 
-      <h3>Misión: museos 🏛️</h3>
-
-      <p>
-        Visitaremos los tres museos del Parque Quinta Normal.
-        Y si el tiempo, las ganas y nuestra capacidad de seguir caminando lo permiten:
-      </p>
-
-      <ul class="activity-list">
-        <li><strong>Extra opcional:</strong> Museo Ferroviario 🚂</li>
-      </ul>
-
-      <p>
-        En cada museo habrá registro oficial de la expedición:
-      </p>
-
-      <div class="photo-grid">
-        <div class="photo-item">📸 Fotos tuyas</div>
-        <div class="photo-item">📸 Fotos mías</div>
-        <div class="photo-item">📸 Fotos juntos</div>
-        <div class="photo-item">📸 Evidencia científica</div>
-      </div>
-
-      <p class="highlight">
-        Porque si no hay fotos, científicamente hablando, nunca ocurrió.
-      </p>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <div class="section-number">03</div>
-        <h2>Parque 🌳</h2>
-      </div>
-
-      <p>
-        Después de los museos: caminar, conversar, reírnos y sentarnos si queremos.
-      </p>
-
-      <p>
-        Podemos perdernos un poquito si pinta.
-        Sin checklist. La idea es simplemente pasar tiempo juntos.
-      </p>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <div class="section-number">04</div>
-        <h2>Segunda parte de la cita 🍝</h2>
-      </div>
-
-      <p>
-        Volvemos al depa y nos espera:
-      </p>
-
-      <h3>Pasta casera 🍝</h3>
-
-      <p>
-        Las salsas estarán preparadas de antes, porque aparentemente
-        alguien en esta relación tiene que pensar con anticipación.
-        Solo queda cocinar la pasta.
-      </p>
-
-      <h3>Pero…</h3>
-
-      <p>
-        Si todavía tenemos energía, hacemos nuestra propia pasta desde cero.
-      </p>
-
-      <div class="highlight">
-        <p>
-          Probablemente quedará increíble.<br />
-          Probablemente quedará horrible.<br />
-          Probablemente nos vamos a reír igual.
-        </p>
-      </div>
-
-      <h3>Y para acompañar 🍷</h3>
-
-      <p>
-        Un vinito. Porque una pasta casera sin vino es técnicamente posible,
-        pero estamos intentando hacer las cosas bien.
-      </p>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <div class="section-number">05</div>
-        <h2>Reglamento oficial</h2>
-      </div>
-
-      <ol class="rules">
-        <li>No hay apuro.</li>
-        <li>No hay obligación de cumplir todo el itinerario.</li>
-        <li>Se puede cambiar el plan en cualquier momento.</li>
-        <li>Los abrazos están permitidos durante todo el recorrido.</li>
-        <li>Las fotos son obligatorias, pero posar bonito es opcional.</li>
-        <li>Si estás cansada, se cancela cualquier cosa excepto descansar.</li>
-        <li>El objetivo principal es pasarla bien juntos.</li>
-      </ol>
-    </section>
-
-    <section class="final-card">
-      <h2>✦ Cita Cita ✦</h2>
-
-      <p>
-        Porque no es una salida.<br />
-        No es un panorama.<br />
-        No es “juntarnos”.
-      </p>
-
-      <p>
-        Es una…
-        <strong>cita cita.</strong> ❤️
-      </p>
-
-      <p class="signature">
-        Con cariño,<br />
-        alguien que quiere pasar un día bonito contigo.
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    Hecho especialmente para Jacqueline ❤️
-  </footer>
+    accordionButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const item = button.parentElement;
+        item.classList.toggle("open");
+      });
+    });
+  </script>
 </body>
 </html>
