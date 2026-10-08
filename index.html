@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Cita Cita para Jacqueline ❤️</title>
+
+  <style>
+    :root {
+      --cream: #fffaf3;
+      --paper: #fffdf9;
+      --ink: #332b2b;
+      --muted: #756565;
+      --wine: #8f3048;
+      --rose: #d97488;
+      --pink: #f8dce2;
+      --gold: #d69b48;
+      --shadow: 0 18px 45px rgba(91, 43, 53, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(248, 220, 226, 0.75), transparent 25rem),
+        radial-gradient(circle at 90% 20%, rgba(255, 232, 190, 0.5), transparent 22rem),
+        var(--cream);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    .container {
+      width: min(940px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 42px 0;
+    }
+
+    .hero-card {
+      position: relative;
+      width: 100%;
+      padding: clamp(34px, 8vw, 86px) clamp(24px, 8vw, 90px);
+      text-align: center;
+      background: rgba(255, 253, 249, 0.9);
+      border: 1px solid rgba(143, 48, 72, 0.13);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-card::before,
+    .hero-card::after {
+      position: absolute;
+      color: var(--rose);
+      font-size: 28px;
+      opacity: 0.65;
+    }
+
+    .hero-card::before {
+      content: "✦";
+      top: 22px;
+      left: 28px;
+    }
+
+    .hero-card::after {
+      content: "✦";
+      right: 28px;
+      bottom: 22px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--wine);
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.15;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--wine);
+      font-size: clamp(3rem, 10vw, 6.7rem);
+      letter-spacing: -0.06em;
+    }
+
+    .hero-subtitle {
+      max-width: 540px;
+      margin: 20px auto 30px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.7vw, 1.35rem);
+      font-style: italic;
+    }
+
+    .heart {
+      display: inline-block;
+      color: var(--rose);
+      animation: pulse 1.7s infinite;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 34px auto 0;
+      max-width: 700px;
+    }
+
+    .detail {
+      padding: 16px 12px;
+      background: var(--pink);
+      border-radius: 16px;
+    }
+
+    .detail-label {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--wine);
+      font-family: Arial, sans-serif;
+      font-size: 0.7rem;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .detail-value {
+      font-size: 0.98rem;
+    }
+
+    .scroll-note {
+      display: block;
+      margin-top: 35px;
+      color: var(--wine);
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    main {
+      padding-bottom: 70px;
+    }
+
+    .intro {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .section {
+      margin: 26px 0;
+      padding: clamp(24px, 5vw, 46px);
+      background: rgba(255, 253, 249, 0.9);
+      border: 1px solid rgba(143, 48, 72, 0.11);
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(91, 43, 53, 0.06);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .section-number {
+      display: grid;
+      flex: 0 0 48px;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      color: white;
+      background: var(--wine);
+      border-radius: 50%;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--wine);
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+    }
+
+    h3 {
+      margin: 27px 0 8px;
+      color: var(--wine);
+      font-size: 1.35rem;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .highlight {
+      margin: 22px 0;
+      padding: 20px 22px;
+      background: #fff3f5;
+      border-left: 4px solid var(--rose);
+      border-radius: 0 14px 14px 0;
+    }
+
+    .highlight p {
+      margin: 0;
+    }
+
+    .activity-list {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .activity-list li {
+      padding: 14px 16px;
+      background: #fff8ef;
+      border-radius: 12px;
+    }
+
+    .activity-list strong {
+      color: var(--wine);
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .photo-item {
+      padding: 17px;
+      text-align: center;
+      background: #fdf0e4;
+      border-radius: 14px;
+    }
+
+    .rules {
+      display: grid;
+      gap: 10px;
+      padding: 0;
+      list-style: none;
+      counter-reset: rules;
+    }
+
+    .rules li {
+      counter-increment: rules;
+      position: relative;
+      padding: 13px 16px 13px 52px;
+      background: #fff8ef;
+      border-radius: 12px;
+    }
+
+    .rules li::before {
+      content: counter(rules, decimal-leading-zero);
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      color: var(--wine);
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    .final-card {
+      margin-top: 30px;
+      padding: clamp(34px, 7vw, 65px) 25px;
+      color: white;
+      background:
+        linear-gradient(135deg, rgba(143, 48, 72, 0.96), rgba(190, 77, 104, 0.94)),
+        var(--wine);
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .final-card h2 {
+      color: white;
+      font-size: clamp(2rem, 6vw, 3.7rem);
+    }
+
+    .final-card p {
+      max-width: 600px;
+      margin: 20px auto 0;
+      font-size: 1.12rem;
+    }
+
+    .signature {
+      margin-top: 32px;
+      font-size: 1.35rem;
+      font-style: italic;
+    }
+
+    footer {
+      padding: 0 20px 35px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.18);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .details {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 18px 0 35px;
+      }
+
+      .hero-card {
+        border-radius: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <p class="eyebrow">Una invitación oficialmente no oficial</p>
+
+        <h1>✦ Cita Cita ✦</h1>
+
+        <p class="hero-subtitle">
+          Una cita. Pero cita cita.
+          <span class="heart">♥</span>
+        </p>
+
+        <div class="details">
+          <div class="detail">
+            <span class="detail-label">Para</span>
+            <span class="detail-value">Jacqueline</span>
+          </div>
+
+          <div class="detail">
+            <span class="detail-label">Cuándo</span>
+            <span class="detail-value">Viernes en la noche / sábado en la mañana</span>
+          </div>
+
+          <div class="detail">
+            <span class="detail-label">Dónde</span>
+            <span class="detail-value">Partimos en mi depa</span>
+          </div>
+        </div>
+
+        <a class="scroll-note" href="#invitacion">
+          El resto se descubre caminando ↓
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="invitacion" class="container">
+    <p class="intro">
+      La idea es pasar tiempo juntos, descansar, caminar, comer rico,
+      reírnos y dejar que el día se vaya armando solo.
+    </p>
+
+    <section class="section">
+      <div class="section-heading">
+        <div class="section-number">01</div>
+        <h2>Si llegas de madrugada 🌙</h2>
+      </div>
+
+      <p>
+        Después de competir, no hay que demostrarle nada a nadie.
+        Llegas a la hora que quieras, te instalas y yo me encargo del resto.
+      </p>
+
+      <div class="highlight">
+        <p>
+          Masajito de manitas + espalda<br />
+          Besitos.<br />
+          Cariño en la cabeza.<br />
+          Abrazo.<br />
+          Y dormir.
+        </p>
+      </div>
+
+      <p>
+        Sin horarios. Sin apuro. Sin planes que cumplir.
+        Solo tú descansando y yo haciendo lo posible para que te sientas querida.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div class="section-number">02</div>
+        <h2>Si llegas en la mañana ☀️</h2>
+      </div>
+
+      <h3>Desayuno para dos ☕️</h3>
+
+      <p>
+        La Cita Cita comienza oficialmente con desayuno,
+        conversación y probablemente alguna opinión muy seria sobre qué comer.
+      </p>
+
+      <h3>Rumbo a Quinta Normal 🚶‍♀️🚶‍♂️</h3>
+
+      <p>
+        Un paseo sin correr, sin mirar demasiado la hora y con la cámara preparada.
+      </p>
+
+      <h3>Misión: museos 🏛️</h3>
+
+      <p>
+        Visitaremos los tres museos del Parque Quinta Normal.
+        Y si el tiempo, las ganas y nuestra capacidad de seguir caminando lo permiten:
+      </p>
+
+      <ul class="activity-list">
+        <li><strong>Extra opcional:</strong> Museo Ferroviario 🚂</li>
+      </ul>
+
+      <p>
+        En cada museo habrá registro oficial de la expedición:
+      </p>
+
+      <div class="photo-grid">
+        <div class="photo-item">📸 Fotos tuyas</div>
+        <div class="photo-item">📸 Fotos mías</div>
+        <div class="photo-item">📸 Fotos juntos</div>
+        <div class="photo-item">📸 Evidencia científica</div>
+      </div>
+
+      <p class="highlight">
+        Porque si no hay fotos, científicamente hablando, nunca ocurrió.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div class="section-number">03</div>
+        <h2>Parque 🌳</h2>
+      </div>
+
+      <p>
+        Después de los museos: caminar, conversar, reírnos y sentarnos si queremos.
+      </p>
+
+      <p>
+        Podemos perdernos un poquito si pinta.
+        Sin checklist. La idea es simplemente pasar tiempo juntos.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div class="section-number">04</div>
+        <h2>Segunda parte de la cita 🍝</h2>
+      </div>
+
+      <p>
+        Volvemos al depa y nos espera:
+      </p>
+
+      <h3>Pasta casera 🍝</h3>
+
+      <p>
+        Las salsas estarán preparadas de antes, porque aparentemente
+        alguien en esta relación tiene que pensar con anticipación.
+        Solo queda cocinar la pasta.
+      </p>
+
+      <h3>Pero…</h3>
+
+      <p>
+        Si todavía tenemos energía, hacemos nuestra propia pasta desde cero.
+      </p>
+
+      <div class="highlight">
+        <p>
+          Probablemente quedará increíble.<br />
+          Probablemente quedará horrible.<br />
+          Probablemente nos vamos a reír igual.
+        </p>
+      </div>
+
+      <h3>Y para acompañar 🍷</h3>
+
+      <p>
+        Un vinito. Porque una pasta casera sin vino es técnicamente posible,
+        pero estamos intentando hacer las cosas bien.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div class="section-number">05</div>
+        <h2>Reglamento oficial</h2>
+      </div>
+
+      <ol class="rules">
+        <li>No hay apuro.</li>
+        <li>No hay obligación de cumplir todo el itinerario.</li>
+        <li>Se puede cambiar el plan en cualquier momento.</li>
+        <li>Los abrazos están permitidos durante todo el recorrido.</li>
+        <li>Las fotos son obligatorias, pero posar bonito es opcional.</li>
+        <li>Si estás cansada, se cancela cualquier cosa excepto descansar.</li>
+        <li>El objetivo principal es pasarla bien juntos.</li>
+      </ol>
+    </section>
+
+    <section class="final-card">
+      <h2>✦ Cita Cita ✦</h2>
+
+      <p>
+        Porque no es una salida.<br />
+        No es un panorama.<br />
+        No es “juntarnos”.
+      </p>
+
+      <p>
+        Es una…
+        <strong>cita cita.</strong> ❤️
+      </p>
+
+      <p class="signature">
+        Con cariño,<br />
+        alguien que quiere pasar un día bonito contigo.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    Hecho especialmente para Jacqueline ❤️
+  </footer>
+</body>
+</html>
